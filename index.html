@@ -159,7 +159,7 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
-      padding-bottom: 80px; /* Space for bottom nav */
+      padding-bottom: 80px;
     }
 
     /* ========== PAGE CONTENT ========== */
@@ -181,6 +181,82 @@
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
     }
 
+    /* ========== STATS GRID ========== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .stat-card {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 25px 20px;
+      text-align: center;
+      border: 2px solid;
+      cursor: pointer;
+      transition: all 0.3s;
+      min-height: 120px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .stat-card.active {
+      border-color: #00ff88;
+      background: rgba(0, 255, 136, 0.1);
+    }
+
+    .stat-card.expired {
+      border-color: #f59e0b;
+      background: rgba(245, 158, 11, 0.1);
+    }
+
+    .stat-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .stat-card.active .stat-icon {
+      color: #00ff88;
+      text-shadow: 0 0 15px #00ff88;
+    }
+
+    .stat-card.expired .stat-icon {
+      color: #f59e0b;
+      text-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 900;
+      margin: 5px 0;
+      line-height: 1;
+    }
+
+    .stat-card.active .stat-number {
+      color: #00ff88;
+      text-shadow: 0 0 10px #00ff88;
+    }
+
+    .stat-card.expired .stat-number {
+      color: #f59e0b;
+      text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: #94a3b8;
+      font-weight: 600;
+      margin-top: 5px;
+    }
+
+    /* ========== PHONE INPUT ========== */
     .phone-input-container {
       display: flex;
       align-items: center;
@@ -188,7 +264,7 @@
       border: 2px solid rgba(255, 255, 255, 0.1);
       border-radius: 16px;
       padding: 0 20px;
-      margin-bottom: 24px;
+      margin: 30px 0;
     }
 
     .phone-prefix {
@@ -208,229 +284,31 @@
       outline: none;
     }
 
-    /* ========== STATS GRID ========== */
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
-      margin: 25px 0;
-    }
-
-    .stat-card {
+    /* ========== INFO BOX ========== */
+    .info-box {
       background: rgba(0, 0, 0, 0.3);
       border-radius: 16px;
       padding: 20px;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .stat-card:hover {
-      transform: translateY(-5px);
-      border-color: #00ff88;
-      box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
-    }
-
-    .stat-card.active {
-      border-color: #00ff88;
-      background: rgba(0, 255, 136, 0.1);
-    }
-
-    .stat-card.expired {
-      border-color: #ef4444;
-      background: rgba(239, 68, 68, 0.1);
-    }
-
-    .stat-number {
-      font-size: 32px;
-      font-weight: 900;
-      margin: 10px 0;
-    }
-
-    .stat-card.active .stat-number {
-      color: #00ff88;
-      text-shadow: 0 0 10px #00ff88;
-    }
-
-    .stat-card.expired .stat-number {
-      color: #ef4444;
-      text-shadow: 0 0 10px rgba(239, 68, 68, 0.5);
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: #94a3b8;
-      font-weight: 600;
-    }
-
-    /* ========== ACTIVITY LIST ========== */
-    .activity-container {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 16px;
-      padding: 25px;
       margin: 25px 0;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      max-height: 300px;
-      overflow-y: auto;
-    }
-
-    .activity-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .activity-title {
-      color: white;
-      font-size: 18px;
-      font-weight: 700;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .refresh-btn {
-      background: rgba(0, 255, 136, 0.1);
-      border: 1px solid rgba(0, 255, 136, 0.3);
-      color: #00ff88;
-      padding: 8px 16px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s;
-    }
-
-    .refresh-btn:hover {
-      background: rgba(0, 255, 136, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .activity-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .activity-item {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 12px;
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      border-left: 4px solid #00ff88;
-    }
-
-    .activity-item.expired {
-      border-left-color: #ef4444;
-      opacity: 0.7;
-    }
-
-    .activity-info {
-      flex: 1;
-    }
-
-    .activity-phone {
-      color: white;
-      font-weight: 600;
-      font-size: 14px;
-      margin-bottom: 5px;
-    }
-
-    .activity-time {
-      color: #94a3b8;
-      font-size: 12px;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .activity-status {
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-weight: 700;
-    }
-
-    .status-active {
-      background: rgba(0, 255, 136, 0.2);
-      color: #00ff88;
-    }
-
-    .status-expired {
-      background: rgba(239, 68, 68, 0.2);
-      color: #ef4444;
-    }
-
-    .empty-activity {
       text-align: center;
-      color: #94a3b8;
-      padding: 30px 0;
-      font-size: 14px;
     }
 
-    .empty-activity i {
-      font-size: 32px;
-      margin-bottom: 10px;
-      opacity: 0.5;
-    }
-
-    /* ========== TIMER CONTAINER ========== */
-    .timer-container {
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 16px;
-      padding: 25px;
-      margin: 25px 0;
-      border: 2px solid rgba(0, 255, 136, 0.2);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .timer-container::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, #00ff88, #00cc6a);
-    }
-
-    .timer-label {
-      color: #94a3b8;
-      font-size: 14px;
+    .info-title {
+      color: #00ff88;
+      font-size: 16px;
+      font-weight: 700;
       margin-bottom: 10px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
     }
 
-    .timer-display {
-      font-size: 36px;
-      font-weight: 900;
-      color: #00ff88;
-      font-family: 'Courier New', monospace;
-      text-shadow: 0 0 20px #00ff88;
-      margin: 10px 0;
-    }
-
-    .timer-hint {
+    .info-text {
       color: #94a3b8;
-      font-size: 12px;
-      margin-top: 10px;
-    }
-
-    .timer-hint i {
-      color: #00ff88;
-      margin-right: 5px;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     /* ========== PROFILE PAGE ========== */
@@ -633,21 +511,6 @@
       color: #10b981;
       display: none;
     }
-
-    /* ========== SCROLLBAR ========== */
-    .activity-container::-webkit-scrollbar {
-      width: 6px;
-    }
-
-    .activity-container::-webkit-scrollbar-track {
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 3px;
-    }
-
-    .activity-container::-webkit-scrollbar-thumb {
-      background: rgba(0, 255, 136, 0.3);
-      border-radius: 3px;
-    }
   </style>
 </head>
 <body>
@@ -730,16 +593,31 @@
 
         <!-- STATS GRID -->
         <div class="stats-grid">
-          <div class="stat-card active" onclick="showActivity('active')">
-            <div class="stat-label">BADAK AKTIF</div>
+          <div class="stat-card active">
+            <div class="stat-icon">
+              <i class="fas fa-bolt"></i>
+            </div>
             <div class="stat-number" id="activeBadakCount">0</div>
-            <div class="stat-label">Sedang Berjalan</div>
+            <div class="stat-label">BADAK AKTIF</div>
           </div>
 
-          <div class="stat-card expired" onclick="showActivity('expired')">
-            <div class="stat-label">BADAK EXPIRED</div>
+          <div class="stat-card expired">
+            <div class="stat-icon">
+              <i class="fas fa-clock"></i>
+            </div>
             <div class="stat-number" id="expiredBadakCount">0</div>
-            <div class="stat-label">Bisa Dipakai Lagi</div>
+            <div class="stat-label">BADAK EXPIRED</div>
+          </div>
+        </div>
+
+        <!-- INFO BOX -->
+        <div class="info-box">
+          <div class="info-title">
+            <i class="fas fa-info-circle"></i>
+            INFO SYSTEM
+          </div>
+          <div class="info-text">
+            Badak aktif selama <strong>24 jam</strong>. Setelah expired, tunggu <strong>24 jam</strong> untuk bisa pakai nomor yang sama lagi tanpa perlu renew ke admin.
           </div>
         </div>
 
@@ -752,26 +630,8 @@
           </div>
         </div>
 
-        <!-- ACTIVITY LIST -->
-        <div class="activity-container">
-          <div class="activity-header">
-            <div class="activity-title">
-              <i class="fas fa-history"></i>
-              <span id="activityTitle">AKTIVITAS TERKINI</span>
-            </div>
-            <button class="refresh-btn" onclick="loadBadakActivity()">
-              <i class="fas fa-redo"></i>
-              REFRESH
-            </button>
-          </div>
-          
-          <div class="activity-list" id="activityList">
-            <!-- Activity items will be loaded here -->
-          </div>
-        </div>
-
         <!-- ACTIVATE BUTTON -->
-        <button class="btn" onclick="checkAndGasBadak()" id="gasBadakBtn">
+        <button class="btn" onclick="gasBadak()" id="gasBadakBtn">
           <i class="fas fa-bolt"></i>
           <span id="btnText">GAS BADAK SEKARANG</span>
         </button>
@@ -803,12 +663,16 @@
             </div>
           </div>
           <div class="info-row">
-            <span class="info-label">Status</span>
-            <span class="info-value" id="profileStatus">Active</span>
-          </div>
-          <div class="info-row">
             <span class="info-label">Total Badak</span>
             <span class="info-value" id="profileTotalBadak">0</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Aktif</span>
+            <span class="info-value" id="profileActiveBadak">0</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Expired</span>
+            <span class="info-value" id="profileExpiredBadak">0</span>
           </div>
         </div>
 
@@ -883,9 +747,6 @@
     
     // ========== STATE VARIABLES ==========
     let currentUser = null;
-    let userData = null;
-    let badakActivity = [];
-    let activityFilter = 'all';
     
     // ========== UTILITY FUNCTIONS ==========
     function showNotification(message, type = 'success') {
@@ -937,161 +798,52 @@
       document.getElementById('gasBadakBtn').disabled = false;
     }
     
-    function formatDate(timestamp) {
-      if (!timestamp) return '-';
-      try {
-        const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
-        const now = new Date();
-        const diffMs = now - date;
-        const diffMins = Math.floor(diffMs / 60000);
-        const diffHours = Math.floor(diffMs / 3600000);
-        const diffDays = Math.floor(diffMs / 86400000);
-        
-        if (diffMins < 1) return 'Baru saja';
-        if (diffMins < 60) return `${diffMins}m lalu`;
-        if (diffHours < 24) return `${diffHours}j lalu`;
-        if (diffDays < 7) return `${diffDays}h lalu`;
-        
-        return date.toLocaleDateString('id-ID', { 
-          day: '2-digit', 
-          month: 'short' 
-        });
-      } catch (e) {
-        return '-';
-      }
-    }
-    
-    // ========== BADAK ACTIVITY SYSTEM ==========
-    async function loadBadakActivity() {
+    // ========== LOAD BADAK STATS ==========
+    async function loadBadakStats() {
       if (!currentUser) return;
       
       try {
-        const activityList = document.getElementById('activityList');
-        activityList.innerHTML = `
-          <div class="empty-activity">
-            <i class="fas fa-spinner fa-spin"></i>
-            <div>Loading activity...</div>
-          </div>
-        `;
-        
+        // Get all badak numbers for this user
         const snapshot = await db.collection('badak_numbers')
           .where('userId', '==', currentUser.uid)
-          .orderBy('createdAt', 'desc')
-          .limit(20)
           .get();
         
-        badakActivity = [];
         let activeCount = 0;
         let expiredCount = 0;
+        const now = new Date();
         
         snapshot.forEach(doc => {
           const data = doc.data();
-          const item = {
-            id: doc.id,
-            ...data,
-            isExpired: false
-          };
-          
-          // Check if expired
           if (data.expiredAt) {
             const expiredTime = data.expiredAt.toDate();
-            const now = new Date();
-            item.isExpired = expiredTime < now;
-            item.timeLeft = expiredTime - now;
-            
-            if (item.isExpired) {
-              expiredCount++;
-            } else {
+            if (expiredTime > now) {
               activeCount++;
+            } else {
+              expiredCount++;
             }
           }
-          
-          badakActivity.push(item);
         });
         
-        // Update counts
+        // Update UI
         document.getElementById('activeBadakCount').textContent = activeCount;
         document.getElementById('expiredBadakCount').textContent = expiredCount;
         document.getElementById('profileTotalBadak').textContent = snapshot.size;
-        
-        // Render activity
-        renderActivityList();
+        document.getElementById('profileActiveBadak').textContent = activeCount;
+        document.getElementById('profileExpiredBadak').textContent = expiredCount;
         
       } catch (error) {
-        console.error('Error loading activity:', error);
-        const activityList = document.getElementById('activityList');
-        activityList.innerHTML = `
-          <div class="empty-activity">
-            <i class="fas fa-exclamation-triangle"></i>
-            <div>Gagal memuat aktivitas</div>
-          </div>
-        `;
+        console.error('Error loading stats:', error);
+        // Jika error, tetap set ke 0
+        document.getElementById('activeBadakCount').textContent = '0';
+        document.getElementById('expiredBadakCount').textContent = '0';
+        document.getElementById('profileTotalBadak').textContent = '0';
+        document.getElementById('profileActiveBadak').textContent = '0';
+        document.getElementById('profileExpiredBadak').textContent = '0';
       }
     }
     
-    function renderActivityList() {
-      const activityList = document.getElementById('activityList');
-      
-      if (badakActivity.length === 0) {
-        activityList.innerHTML = `
-          <div class="empty-activity">
-            <i class="fas fa-history"></i>
-            <div>Belum ada aktivitas Badak</div>
-          </div>
-        `;
-        return;
-      }
-      
-      let html = '';
-      let filteredActivity = badakActivity;
-      
-      if (activityFilter === 'active') {
-        filteredActivity = badakActivity.filter(item => !item.isExpired);
-      } else if (activityFilter === 'expired') {
-        filteredActivity = badakActivity.filter(item => item.isExpired);
-      }
-      
-      filteredActivity.forEach((item, index) => {
-        const phone = item.phone || 'N/A';
-        const createdAt = formatDate(item.createdAt);
-        const isExpired = item.isExpired;
-        
-        html += `
-          <div class="activity-item ${isExpired ? 'expired' : ''}">
-            <div class="activity-info">
-              <div class="activity-phone">${phone}</div>
-              <div class="activity-time">
-                <i class="far fa-clock"></i>
-                ${createdAt}
-                ${item.code ? ` • ${item.code}` : ''}
-              </div>
-            </div>
-            <div class="activity-status ${isExpired ? 'status-expired' : 'status-active'}">
-              ${isExpired ? 'EXPIRED' : 'ACTIVE'}
-            </div>
-          </div>
-        `;
-      });
-      
-      activityList.innerHTML = html;
-      
-      // Update title
-      const titleMap = {
-        'all': 'SEMUA AKTIVITAS',
-        'active': 'BADAK AKTIF',
-        'expired': 'BADAK EXPIRED'
-      };
-      document.getElementById('activityTitle').textContent = 
-        `${titleMap[activityFilter]} (${filteredActivity.length})`;
-    }
-    
-    function showActivity(filter) {
-      activityFilter = filter;
-      renderActivityList();
-    }
-    
-    // ========== AUTO-RENEW SYSTEM ==========
-    async function checkAndGasBadak() {
+    // ========== GAS BADAK WITH AUTO-RENEW ==========
+    async function gasBadak() {
       const phone = document.getElementById('phone').value.trim();
       const btn = document.getElementById('gasBadakBtn');
       const btnText = document.getElementById('btnText');
@@ -1116,25 +868,25 @@
       
       try {
         const fullPhone = '+62' + phone;
+        const now = new Date();
         
-        // Cek apakah nomor ini sudah pernah dipakai
-        const existingQuery = await db.collection('badak_numbers')
+        // Cek apakah nomor ini sudah pernah dipakai oleh user ini
+        let canActivate = true;
+        let errorMessage = '';
+        
+        // Coba query sederhana tanpa orderBy (biar ga error rules)
+        const querySnapshot = await db.collection('badak_numbers')
           .where('userId', '==', currentUser.uid)
           .where('phone', '==', fullPhone)
-          .orderBy('createdAt', 'desc')
-          .limit(1)
           .get();
         
-        let canActivate = true;
-        let message = '';
-        
-        if (!existingQuery.empty) {
-          const existingData = existingQuery.docs[0].data();
-          const existingId = existingQuery.docs[0].id;
+        if (!querySnapshot.empty) {
+          // Ambil data pertama (walaupun mungkin ada beberapa)
+          const doc = querySnapshot.docs[0];
+          const data = doc.data();
           
-          if (existingData.expiredAt) {
-            const expiredTime = existingData.expiredAt.toDate();
-            const now = new Date();
+          if (data.expiredAt) {
+            const expiredTime = data.expiredAt.toDate();
             const timeSinceExpired = now - expiredTime;
             const hoursSinceExpired = timeSinceExpired / 3600000;
             
@@ -1142,31 +894,35 @@
             if (expiredTime > now) {
               const hoursLeft = Math.ceil((expiredTime - now) / 3600000);
               canActivate = false;
-              message = `Nomor ini masih aktif! ${hoursLeft} jam lagi baru bisa dipakai.`;
+              errorMessage = `Nomor ini masih aktif! ${hoursLeft} jam lagi baru bisa dipakai.`;
             }
-            // Jika sudah expired lebih dari 24 jam, boleh dipakai lagi
+            // Jika sudah expired lebih dari 24 jam
             else if (hoursSinceExpired >= 24) {
-              // Auto-renew: hapus data lama, buat baru
-              await db.collection('badak_numbers').doc(existingId).delete();
-              message = 'Nomor expired >24 jam, auto-renew aktif!';
+              // Auto-renew: update data lama jadi expired dan buat baru
+              await db.collection('badak_numbers').doc(doc.id).update({
+                status: 'expired',
+                autoRenewed: true,
+                renewedAt: firebase.firestore.FieldValue.serverTimestamp()
+              });
+              errorMessage = 'Nomor expired >24 jam, auto-renew aktif!';
             }
             // Jika expired kurang dari 24 jam
             else {
               const hoursToWait = 24 - Math.floor(hoursSinceExpired);
               canActivate = false;
-              message = `Tunggu ${hoursToWait} jam lagi untuk pakai nomor ini.`;
+              errorMessage = `Tunggu ${hoursToWait} jam lagi untuk pakai nomor ini.`;
             }
           }
         }
         
         if (!canActivate) {
-          showNotification(message, 'error');
+          showNotification(errorMessage, 'error');
           btnText.textContent = 'GAS BADAK SEKARANG';
           btn.disabled = false;
           return;
         }
         
-        // Create new badak entry
+        // CREATE NEW BADAK ENTRY
         const badakCode = 'BADAK-' + Math.random().toString(36).substr(2, 5).toUpperCase();
         const expiredAt = new Date();
         expiredAt.setHours(expiredAt.getHours() + 24);
@@ -1184,18 +940,33 @@
         btnText.innerHTML = '<i class="fas fa-check"></i> SUCCESS';
         document.getElementById('phone').value = '';
         
-        showNotification(`Badak berhasil diaktivasi! Kode: ${badakCode}`, 'success');
+        showNotification(`Badak berhasil diaktivasi!`, 'success');
         
-        // Refresh activity
+        // Refresh stats
         setTimeout(() => {
-          loadBadakActivity();
+          loadBadakStats();
           btnText.textContent = 'GAS BADAK SEKARANG';
           btn.disabled = false;
         }, 2000);
         
       } catch (error) {
         console.error('Error in gasBadak:', error);
-        showNotification('Error: ' + error.message, 'error');
+        
+        // Simplified error message
+        let userMessage = 'Gagal mengaktifkan Badak. ';
+        
+        if (error.code === 'permission-denied') {
+          userMessage += 'Firebase rules tidak mengizinkan. ';
+          userMessage += 'Coba buka Firebase Console → Firestore → Rules, dan ubah menjadi: ';
+          userMessage += 'allow read, write: if true;';
+        } else if (error.message.includes('index')) {
+          userMessage += 'Firestore perlu indexing. ';
+          userMessage += 'Buka link error di browser untuk buat index otomatis.';
+        } else {
+          userMessage += error.message;
+        }
+        
+        showNotification(userMessage, 'error');
         btnText.textContent = 'GAS BADAK SEKARANG';
         btn.disabled = false;
       }
@@ -1218,7 +989,7 @@
       
       if (pageId === 'badakPage') {
         document.querySelector('.nav-item:nth-child(1)').classList.add('active');
-        loadBadakActivity();
+        loadBadakStats();
       } else if (pageId === 'profilePage') {
         document.querySelector('.nav-item:nth-child(2)').classList.add('active');
         loadProfileData();
@@ -1256,10 +1027,20 @@
         const userCredential = await auth.signInWithEmailAndPassword(email, password);
         currentUser = userCredential.user;
         
-        // Update last login
-        await db.collection('users').doc(currentUser.uid).update({
-          lastLogin: firebase.firestore.FieldValue.serverTimestamp()
-        });
+        // Create/update user document if not exists
+        const userDoc = await db.collection('users').doc(currentUser.uid).get();
+        if (!userDoc.exists) {
+          await db.collection('users').doc(currentUser.uid).set({
+            email: email,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
+            status: 'active'
+          });
+        } else {
+          await db.collection('users').doc(currentUser.uid).update({
+            lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+          });
+        }
         
         showApp();
         
@@ -1303,8 +1084,7 @@
           email: email,
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
           lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
-          status: 'active',
-          totalBadak: 0
+          status: 'active'
         });
         
         showApp();
@@ -1327,18 +1107,8 @@
         document.getElementById('profileUserId').textContent = currentUser.uid;
         document.getElementById('profileUserName').textContent = currentUser.email.split('@')[0];
         
-        // Get user data from Firestore
-        const userDoc = await db.collection('users').doc(currentUser.uid).get();
-        if (userDoc.exists) {
-          userData = userDoc.data();
-          document.getElementById('profileStatus').textContent = userData.status || 'Active';
-          
-          // Load total badak count
-          const badakSnapshot = await db.collection('badak_numbers')
-            .where('userId', '==', currentUser.uid)
-            .get();
-          document.getElementById('profileTotalBadak').textContent = badakSnapshot.size;
-        }
+        // Load stats juga
+        loadBadakStats();
         
       } catch (error) {
         console.error('Error loading profile data:', error);
@@ -1367,8 +1137,6 @@
       try {
         await auth.signOut();
         currentUser = null;
-        userData = null;
-        badakActivity = [];
         window.location.reload();
       } catch (error) {
         console.error('Error logging out:', error);
@@ -1389,47 +1157,13 @@
       resetButtons();
     }
     
-    // ========== AUTO CHECK EXPIRED ==========
-    async function checkExpiredBadak() {
-      if (!currentUser) return;
-      
-      try {
-        const now = new Date();
-        const expiredQuery = await db.collection('badak_numbers')
-          .where('userId', '==', currentUser.uid)
-          .where('expiredAt', '<', now)
-          .where('status', '==', 'active')
-          .get();
-        
-        if (!expiredQuery.empty) {
-          const batch = db.batch();
-          expiredQuery.forEach(doc => {
-            batch.update(doc.ref, { status: 'expired' });
-          });
-          await batch.commit();
-          
-          // Refresh activity if on badak page
-          if (!document.getElementById('badakPage').classList.contains('hidden')) {
-            loadBadakActivity();
-          }
-        }
-      } catch (error) {
-        console.error('Error checking expired:', error);
-      }
-    }
-    
     // ========== AUTH STATE LISTENER ==========
     auth.onAuthStateChanged((user) => {
       if (user) {
         currentUser = user;
         showApp();
-        // Check expired every 5 minutes
-        setInterval(checkExpiredBadak, 300000);
       }
     });
-    
-    // Initial check
-    setInterval(checkExpiredBadak, 60000);
   </script>
 </body>
 </html>
