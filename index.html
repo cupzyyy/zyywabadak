@@ -30,6 +30,7 @@
       justify-content: center;
       align-items: center;
       padding: 20px;
+      position: relative;
     }
 
     /* ========== GLASS CARD ========== */
@@ -158,6 +159,16 @@
       width: 100%;
       max-width: 480px;
       margin: 0 auto;
+      padding-bottom: 80px; /* Space for bottom nav */
+    }
+
+    /* ========== PAGE CONTENT ========== */
+    .page-content {
+      display: block;
+    }
+
+    .page-content.hidden {
+      display: none;
     }
 
     /* ========== BADAK PAGE ========== */
@@ -214,6 +225,260 @@
       text-shadow: 0 0 20px #00ff88;
     }
 
+    /* ========== PROFILE PAGE ========== */
+    .profile-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      padding: 40px 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .profile-avatar {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #00ff88, #00cc6a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 32px;
+      color: black;
+      font-weight: 800;
+      box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+    }
+
+    .profile-info {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 30px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: #94a3b8;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .info-value {
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-align: right;
+      max-width: 60%;
+      word-break: break-all;
+    }
+
+    .copy-btn {
+      background: rgba(0, 255, 136, 0.1);
+      border: 1px solid rgba(0, 255, 136, 0.3);
+      color: #00ff88;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: all 0.3s;
+    }
+
+    .copy-btn:hover {
+      background: rgba(0, 255, 136, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* ========== CHANGE PASSWORD MODAL ========== */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .modal-content {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 40px 30px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .modal-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .modal-subtitle {
+      color: #94a3b8;
+      font-size: 14px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    /* ========== CONFIRM LOGOUT MODAL ========== */
+    .logout-modal {
+      display: none;
+    }
+
+    .logout-icon {
+      font-size: 64px;
+      color: #ef4444;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 0 0 20px rgba(239, 68, 68, 0.5);
+    }
+
+    .logout-message {
+      color: white;
+      text-align: center;
+      font-size: 16px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .logout-buttons {
+      display: flex;
+      gap: 15px;
+    }
+
+    .logout-btn {
+      flex: 1;
+      padding: 18px;
+      border-radius: 16px;
+      border: none;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .logout-btn.cancel {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    .logout-btn.confirm {
+      background: linear-gradient(90deg, #ef4444, #dc2626);
+      color: white;
+    }
+
+    .logout-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(239, 68, 68, 0.3);
+    }
+
+    /* ========== BOTTOM NAVIGATION ========== */
+    .bottom-nav {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 40px);
+      max-width: 480px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+      display: flex;
+      padding: 15px 0;
+      z-index: 100;
+    }
+
+    .nav-item {
+      flex: 1;
+      text-align: center;
+      cursor: pointer;
+      color: #94a3b8;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .nav-item.active {
+      color: #00ff88;
+    }
+
+    .nav-icon {
+      font-size: 24px;
+      margin-bottom: 8px;
+      transition: all 0.3s;
+    }
+
+    .nav-item.active .nav-icon {
+      transform: translateY(-5px);
+      text-shadow: 0 0 15px #00ff88;
+    }
+
+    .nav-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .nav-indicator {
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 6px;
+      height: 6px;
+      background: #00ff88;
+      border-radius: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .nav-item.active .nav-indicator {
+      opacity: 1;
+    }
+
     /* ========== LOADING SPINNER ========== */
     .loading {
       display: inline-block;
@@ -227,6 +492,18 @@
 
     @keyframes spin {
       to { transform: rotate(360deg); }
+    }
+
+    /* ========== SUCCESS MESSAGE ========== */
+    .success-message {
+      padding: 16px;
+      border-radius: 12px;
+      margin-top: 20px;
+      font-size: 14px;
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      color: #10b981;
+      display: none;
     }
   </style>
 </head>
@@ -295,49 +572,183 @@
     </div>
   </div>
 
-  <!-- MAIN APP (BADAK ONLY) -->
+  <!-- MAIN APP -->
   <div id="appContainer" class="app-container">
-    <div class="badak-container">
-      <div class="header">
-        <div class="header-icon">
-          <i class="fab fa-whatsapp"></i>
+    <!-- BADAK PAGE -->
+    <div id="badakPage" class="page-content">
+      <div class="badak-container">
+        <div class="header">
+          <div class="header-icon">
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <h1>BADAK ACTIVATOR</h1>
+          <p>Aktifkan fitur premium untuk nomor Anda</p>
         </div>
-        <h1>BADAK ACTIVATOR</h1>
-        <p>Aktifkan fitur premium untuk nomor Anda</p>
+
+        <!-- USER INFO -->
+        <div style="background: rgba(0, 0, 0, 0.3); border-radius: 16px; padding: 20px; margin-bottom: 24px; text-align: center;">
+          <div style="color: #00ff88; font-size: 14px; font-weight: 600;">Logged in as:</div>
+          <div style="color: white; font-size: 16px; font-weight: 700; margin-top: 5px;" id="userEmail">user@email.com</div>
+        </div>
+
+        <!-- PHONE INPUT -->
+        <div class="input-group">
+          <label>Nomor WhatsApp</label>
+          <div class="phone-input-container">
+            <span class="phone-prefix">+62</span>
+            <input type="number" id="phone" class="phone-input" placeholder="812xxxxxxx">
+          </div>
+        </div>
+
+        <!-- TIMER -->
+        <div class="timer-container">
+          <div style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">Masa Aktif Badak</div>
+          <div id="expiredTimer" class="timer-display">24:00:00</div>
+        </div>
+
+        <!-- ACTIVATE BUTTON -->
+        <button class="btn" onclick="gasBadak()" id="gasBadakBtn">
+          <i class="fas fa-bolt"></i>
+          <span id="btnText">GAS BADAK SEKARANG</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- PROFILE PAGE -->
+    <div id="profilePage" class="page-content hidden">
+      <div class="profile-container">
+        <div class="profile-header">
+          <div class="profile-avatar" id="userAvatar">U</div>
+          <h1 style="color: white; margin-bottom: 8px;" id="profileUserName">User</h1>
+          <p style="color: #94a3b8; font-size: 14px;">Account Management</p>
+        </div>
+
+        <!-- PROFILE INFO -->
+        <div class="profile-info">
+          <div class="info-row">
+            <span class="info-label">Email</span>
+            <span class="info-value" id="profileEmail">user@email.com</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">User ID</span>
+            <div style="display: flex; align-items: center; justify-content: flex-end; width: 100%;">
+              <span class="info-value" style="font-family: monospace; font-size: 12px;" id="profileUserId">loading...</span>
+              <button class="copy-btn" onclick="copyToClipboard('profileUserId')">
+                <i class="fas fa-copy"></i>
+              </button>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Status</span>
+            <span class="info-value" id="profileStatus">Active</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Created</span>
+            <span class="info-value" id="profileCreated">-</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Last Login</span>
+            <span class="info-value" id="profileLastLogin">-</span>
+          </div>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <button class="btn" onclick="openChangePasswordModal()" style="background: linear-gradient(90deg, #8b5cf6, #7c3aed); margin-bottom: 15px;">
+          <i class="fas fa-key"></i>
+          CHANGE PASSWORD
+        </button>
+
+        <button class="btn" onclick="openLogoutModal()" style="background: linear-gradient(90deg, #ef4444, #dc2626);">
+          <i class="fas fa-sign-out-alt"></i>
+          LOGOUT
+        </button>
+
+        <div style="text-align: center; margin-top: 30px; color: #94a3b8; font-size: 12px;">
+          <i class="fas fa-shield-alt"></i> Data terenkripsi dengan aman
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAVIGATION -->
+  <div class="bottom-nav" id="bottomNav" style="display: none;">
+    <div class="nav-item active" onclick="showPage('badakPage')">
+      <div class="nav-indicator"></div>
+      <div class="nav-icon"><i class="fab fa-whatsapp"></i></div>
+      <div class="nav-label">BADAK</div>
+    </div>
+    <div class="nav-item" onclick="showPage('profilePage')">
+      <div class="nav-indicator"></div>
+      <div class="nav-icon"><i class="fas fa-user"></i></div>
+      <div class="nav-label">PROFILE</div>
+    </div>
+  </div>
+
+  <!-- CHANGE PASSWORD MODAL -->
+  <div class="modal-overlay" id="changePasswordModal">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeChangePasswordModal()">&times;</button>
+      
+      <div class="modal-header">
+        <div class="modal-title">Change Password</div>
+        <div class="modal-subtitle">Masukkan password baru Anda</div>
       </div>
 
-      <!-- USER INFO -->
-      <div style="background: rgba(0, 0, 0, 0.3); border-radius: 16px; padding: 20px; margin-bottom: 24px; text-align: center;">
-        <div style="color: #00ff88; font-size: 14px; font-weight: 600;">Logged in as:</div>
-        <div style="color: white; font-size: 16px; font-weight: 700; margin-top: 5px;" id="userEmail">user@email.com</div>
-      </div>
-
-      <!-- PHONE INPUT -->
       <div class="input-group">
-        <label>Nomor WhatsApp</label>
-        <div class="phone-input-container">
-          <span class="phone-prefix">+62</span>
-          <input type="number" id="phone" class="phone-input" placeholder="812xxxxxxx">
-        </div>
+        <label>Current Password</label>
+        <input type="password" id="currentPassword" class="input-field" placeholder="Password saat ini">
       </div>
 
-      <!-- TIMER -->
-      <div class="timer-container">
-        <div style="color: #94a3b8; font-size: 14px; margin-bottom: 10px;">Masa Aktif Badak</div>
-        <div id="expiredTimer" class="timer-display">24:00:00</div>
+      <div class="input-group">
+        <label>New Password</label>
+        <input type="password" id="newPassword" class="input-field" placeholder="Minimal 6 karakter">
       </div>
 
-      <!-- ACTIVATE BUTTON -->
-      <button class="btn" onclick="gasBadak()" id="gasBadakBtn">
-        <i class="fas fa-bolt"></i>
-        <span id="btnText">GAS BADAK SEKARANG</span>
+      <div class="input-group">
+        <label>Confirm New Password</label>
+        <input type="password" id="confirmNewPassword" class="input-field" placeholder="Ketik ulang password baru">
+      </div>
+
+      <div id="changePasswordError" class="error-message"></div>
+      <div id="changePasswordSuccess" class="success-message"></div>
+
+      <button class="btn" onclick="changePassword()" id="changePasswordBtn" style="background: linear-gradient(90deg, #8b5cf6, #7c3aed);">
+        <i class="fas fa-save"></i>
+        <span id="changePasswordBtnText">UPDATE PASSWORD</span>
       </button>
 
-      <!-- LOGOUT BUTTON -->
-      <button class="btn" onclick="logout()" style="background: linear-gradient(90deg, #ef4444, #dc2626); margin-top: 20px;">
+      <div style="text-align: center; margin-top: 20px;">
+        <button class="form-toggle" onclick="closeChangePasswordModal()" style="background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 14px;">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOGOUT CONFIRMATION MODAL -->
+  <div class="modal-overlay logout-modal" id="logoutModal">
+    <div class="modal-content">
+      <div class="logout-icon">
         <i class="fas fa-sign-out-alt"></i>
-        LOGOUT
-      </button>
+      </div>
+      
+      <div class="modal-header">
+        <div class="modal-title">Confirm Logout</div>
+      </div>
+
+      <div class="logout-message">
+        Are you sure you want to logout?<br>
+        You will need to login again to access your account.
+      </div>
+
+      <div class="logout-buttons">
+        <button class="logout-btn cancel" onclick="closeLogoutModal()">
+          CANCEL
+        </button>
+        <button class="logout-btn confirm" onclick="confirmLogout()">
+          LOGOUT
+        </button>
+      </div>
     </div>
   </div>
 
@@ -359,6 +770,7 @@
     
     // ========== STATE VARIABLES ==========
     let currentUser = null;
+    let userData = null;
     
     // ========== UTILITY FUNCTIONS ==========
     function showNotification(message, type = 'success') {
@@ -400,14 +812,48 @@
       }, 5000);
     }
     
+    function showSuccess(elementId, message) {
+      const element = document.getElementById(elementId);
+      element.textContent = message;
+      element.style.display = 'block';
+      setTimeout(() => {
+        element.style.display = 'none';
+      }, 5000);
+    }
+    
     function resetButtons() {
       document.getElementById('loginBtnText').textContent = 'LOGIN';
       document.getElementById('registerBtnText').textContent = 'BUAT AKUN';
       document.getElementById('btnText').textContent = 'GAS BADAK SEKARANG';
+      document.getElementById('changePasswordBtnText').textContent = 'UPDATE PASSWORD';
       
       document.getElementById('loginBtn').disabled = false;
       document.getElementById('registerBtn').disabled = false;
       document.getElementById('gasBadakBtn').disabled = false;
+      document.getElementById('changePasswordBtn').disabled = false;
+    }
+    
+    // ========== PAGE NAVIGATION ==========
+    function showPage(pageId) {
+      // Hide all pages
+      document.querySelectorAll('.page-content').forEach(page => {
+        page.classList.add('hidden');
+      });
+      
+      // Show selected page
+      document.getElementById(pageId).classList.remove('hidden');
+      
+      // Update bottom nav
+      document.querySelectorAll('.nav-item').forEach(navItem => {
+        navItem.classList.remove('active');
+      });
+      
+      if (pageId === 'badakPage') {
+        document.querySelector('.nav-item:nth-child(1)').classList.add('active');
+      } else if (pageId === 'profilePage') {
+        document.querySelector('.nav-item:nth-child(2)').classList.add('active');
+        loadProfileData();
+      }
     }
     
     // ========== AUTH FUNCTIONS ==========
@@ -440,6 +886,12 @@
       try {
         const userCredential = await auth.signInWithEmailAndPassword(email, password);
         currentUser = userCredential.user;
+        
+        // Update last login
+        await db.collection('users').doc(currentUser.uid).update({
+          lastLogin: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        
         showApp();
         
       } catch (error) {
@@ -481,6 +933,7 @@
         await db.collection('users').doc(currentUser.uid).set({
           email: email,
           createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+          lastLogin: firebase.firestore.FieldValue.serverTimestamp(),
           status: 'active'
         });
         
@@ -493,13 +946,151 @@
       }
     }
     
-    async function logout() {
+    // ========== PROFILE FUNCTIONS ==========
+    async function loadProfileData() {
+      if (!currentUser) return;
+      
+      try {
+        // Set basic info
+        document.getElementById('userEmail').textContent = currentUser.email;
+        document.getElementById('profileEmail').textContent = currentUser.email;
+        document.getElementById('profileUserId').textContent = currentUser.uid;
+        document.getElementById('userAvatar').textContent = currentUser.email.charAt(0).toUpperCase();
+        document.getElementById('profileUserName').textContent = currentUser.email.split('@')[0];
+        
+        // Get user data from Firestore
+        const userDoc = await db.collection('users').doc(currentUser.uid).get();
+        if (userDoc.exists) {
+          userData = userDoc.data();
+          
+          // Format dates
+          const formatDate = (timestamp) => {
+            if (!timestamp) return '-';
+            const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
+            return date.toLocaleDateString('id-ID') + ' ' + date.toLocaleTimeString('id-ID', { hour: '2-digit', minute: '2-digit' });
+          };
+          
+          document.getElementById('profileCreated').textContent = formatDate(userData.createdAt);
+          document.getElementById('profileLastLogin').textContent = formatDate(userData.lastLogin) || '-';
+          document.getElementById('profileStatus').textContent = userData.status || 'Active';
+        }
+        
+      } catch (error) {
+        console.error('Error loading profile data:', error);
+      }
+    }
+    
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        showNotification('Copied to clipboard!');
+      }).catch(err => {
+        showNotification('Failed to copy', 'error');
+      });
+    }
+    
+    // ========== CHANGE PASSWORD FUNCTIONS ==========
+    function openChangePasswordModal() {
+      document.getElementById('changePasswordModal').style.display = 'flex';
+      // Clear fields
+      document.getElementById('currentPassword').value = '';
+      document.getElementById('newPassword').value = '';
+      document.getElementById('confirmNewPassword').value = '';
+      document.getElementById('changePasswordError').style.display = 'none';
+      document.getElementById('changePasswordSuccess').style.display = 'none';
+    }
+    
+    function closeChangePasswordModal() {
+      document.getElementById('changePasswordModal').style.display = 'none';
+      resetButtons();
+    }
+    
+    async function changePassword() {
+      const currentPassword = document.getElementById('currentPassword').value;
+      const newPassword = document.getElementById('newPassword').value;
+      const confirmNewPassword = document.getElementById('confirmNewPassword').value;
+      const btn = document.getElementById('changePasswordBtn');
+      const btnText = document.getElementById('changePasswordBtnText');
+      
+      if (!currentPassword || !newPassword || !confirmNewPassword) {
+        showError('changePasswordError', 'Semua field harus diisi');
+        return;
+      }
+      
+      if (newPassword.length < 6) {
+        showError('changePasswordError', 'Password baru minimal 6 karakter');
+        return;
+      }
+      
+      if (newPassword !== confirmNewPassword) {
+        showError('changePasswordError', 'Password baru tidak cocok');
+        return;
+      }
+      
+      btn.disabled = true;
+      btnText.innerHTML = '<div class="loading"></div>';
+      
+      try {
+        // Re-authenticate user
+        const credential = firebase.auth.EmailAuthProvider.credential(
+          currentUser.email,
+          currentPassword
+        );
+        
+        await currentUser.reauthenticateWithCredential(credential);
+        
+        // Update password
+        await currentUser.updatePassword(newPassword);
+        
+        showSuccess('changePasswordSuccess', 'Password berhasil diubah!');
+        
+        // Clear fields
+        document.getElementById('currentPassword').value = '';
+        document.getElementById('newPassword').value = '';
+        document.getElementById('confirmNewPassword').value = '';
+        
+        setTimeout(() => {
+          closeChangePasswordModal();
+          showNotification('Password changed successfully!');
+        }, 2000);
+        
+      } catch (error) {
+        console.error('Error changing password:', error);
+        let errorMessage = 'Gagal mengubah password';
+        
+        if (error.code === 'auth/wrong-password') {
+          errorMessage = 'Password saat ini salah';
+        } else if (error.code === 'auth/weak-password') {
+          errorMessage = 'Password baru terlalu lemah';
+        } else if (error.code === 'auth/requires-recent-login') {
+          errorMessage = 'Silakan login ulang untuk mengubah password';
+        }
+        
+        showError('changePasswordError', errorMessage);
+        btnText.textContent = 'UPDATE PASSWORD';
+        btn.disabled = false;
+      }
+    }
+    
+    // ========== LOGOUT FUNCTIONS ==========
+    function openLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'flex';
+    }
+    
+    function closeLogoutModal() {
+      document.getElementById('logoutModal').style.display = 'none';
+    }
+    
+    async function confirmLogout() {
       try {
         await auth.signOut();
         currentUser = null;
+        userData = null;
         window.location.reload();
       } catch (error) {
         console.error('Error logging out:', error);
+        showNotification('Logout failed', 'error');
+        closeLogoutModal();
       }
     }
     
@@ -507,8 +1098,10 @@
     function showApp() {
       document.getElementById('loginPage').style.display = 'none';
       document.getElementById('appContainer').style.display = 'block';
+      document.getElementById('bottomNav').style.display = 'flex';
       
-      document.getElementById('userEmail').textContent = currentUser.email;
+      // Show badak page by default
+      showPage('badakPage');
       
       resetButtons();
     }
